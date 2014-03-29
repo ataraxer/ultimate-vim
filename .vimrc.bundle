@@ -1,0 +1,19 @@
+" Initialize NeoBundle
+set runtimepath+=~/.vim/bundle/neobundle.vim
+
+" Collect bundles
+call neobundle#rc(expand('~/.vim/bundle'))
+
+" Let NeoBundle manage NeoBundle
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" Plugins
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'ervandew/supertab'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'Lokaltog/vim-easymotion'
+NeoBundle 'terryma/vim-multiple-cursors'
+NeoBundle 'scrooloose/nerdcommenter'
+
+" Syntax
+NeoBundle 'derekwyatt/vim-scala'

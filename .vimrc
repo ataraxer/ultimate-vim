@@ -1,5 +1,10 @@
+if filereadable(expand('~/.vimrc.bundle'))
+  source ~/.vimrc.bundle
+endif
+
 syntax on
-filetype plugin indent on " enable filetype specific indenting and plugins
+" filetype plugin indent on " enable filetype specific indenting and plugins
+ filetype plugin indent on
 
 " set cursorline " highlight current line
 set number       " show line numbers
@@ -50,3 +55,4 @@ au BufRead,BufNewFile *.py set expandtab shiftwidth=4 softtabstop=4
 if filereadable(expand('~/.vimrc.local'))
   source ~/.vimrc.local
 endif
+
