@@ -14,6 +14,31 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'scrooloose/nerdcommenter'
+NeoBundle 'bronson/vim-trailing-whitespace'
 
 " Syntax
 NeoBundle 'derekwyatt/vim-scala'
+
+" Colorschemes
+NeoBundle 'noahfrederick/vim-hemisu'
+
+" Settings
+" colorscheme
+color hemisu
+set background=light
+
+hi multiple_cursors_cursor cterm=none
+hi link multiple_cursors_visual Visual
+
+" mappings
+map <silent> <leader>/ <plug>NERDCommenterToggle<CR>
+
+" replace standart serach with easymotion
+map  / <plug>(easymotion-sn)
+omap / <plug>(easymotion-tn)
+"map  <Tab> <plug>(easymotion-next)
+"map  <S-Tab> <plug>(easymotion-prev)
+
+" automation
+" remove trailing whitespaces on save
+au BufWritePost * :FixWhitespace
