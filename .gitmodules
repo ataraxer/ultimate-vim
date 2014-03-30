@@ -1,0 +1,6 @@
+[submodule ".vim/bundle/--force"]
+	path = .vim/bundle/--force
+	url = https://github.com/Shougo/neobundle.vim.git
+[submodule ".vim/bundle/neobundle.vim"]
+	path = .vim/bundle/neobundle.vim
+	url = https://github.com/Shougo/neobundle.vim.git
