@@ -15,6 +15,7 @@ NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'bronson/vim-trailing-whitespace'
+NeoBundle 'bkad/CamelCaseMotion'
 
 " Syntax
 NeoBundle 'derekwyatt/vim-scala'
@@ -39,6 +40,31 @@ omap / <plug>(easymotion-tn)
 "map  <Tab> <plug>(easymotion-next)
 "map  <S-Tab> <plug>(easymotion-prev)
 
+map <leader>w <plug>(easymotion-lineanywhere)
+
+let g:EasyMotion_smartcase = 1
+let g:EasyMotion_keys = 'asdfjkl;weio'
+
+map <silent> w <plug>CamelCaseMotion_w
+map <silent> b <plug>CamelCaseMotion_b
+"sunmap w
+"sunmap b
+
+" unite
+" remove trailing whitespace highlighting in unite window
+au BufEnter *     hi ExtraWhiteSpace ctermbg=darkred
+au FileType unite hi ExtraWhiteSpace ctermbg=none
+
+let g:unite_split_rule = 'botright'
+let g:unite_force_overwrite_statusline = 0
+
+map <silent> <leader>b :Unite buffer<CR>
+map <silent> <C-p> :Unite file<CR>
+
+" open new empty tab and show file prompt
+map <silent> <leader>t :tabnew<CR>:Unite file<CR>
+
 " automation
 " remove trailing whitespaces on save
 au BufWritePost * :FixWhitespace
+
