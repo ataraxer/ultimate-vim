@@ -57,3 +57,30 @@ if filereadable(expand('~/.vimrc.local'))
   source ~/.vimrc.local
 endif
 
+" automatically make file executable
+function MakeExecutable()
+  if getline(1) =~ '^#!'
+    if getline(1) =~ 'bin/'
+      silent !chmod u+x <afile>
+    endif
+  endif
+endfunction
+
+au BufWritePost * call MakeExecutable()
+
+" show syntax highlighting groups for word under cursor
+function SynStack()
+  if !exists('*synstack')
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
+
+nmap q :call SynStack()<CR>
+
+" close buffer with \q
+map <silent> <leader>q :q<CR>
+" save file with \s
+map <silent> <leader>s :w<CR>
+" hide search highlighting with \h
+map <silent> <leader>h :nohl<CR>

@@ -16,6 +16,7 @@ NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'bronson/vim-trailing-whitespace'
 NeoBundle 'bkad/CamelCaseMotion'
+NeoBundle 'Yggdroot/indentLine'
 
 " Syntax
 NeoBundle 'derekwyatt/vim-scala'
@@ -30,6 +31,13 @@ set background=light
 
 hi multiple_cursors_cursor cterm=none
 hi link multiple_cursors_visual Visual
+
+" TODO: find out why that's not working
+hi link scalaKeywordModifier Keyword
+hi link scalaNameDefinition  Keyword
+
+" indent lines with |
+"let g:indentLine_char = '|'
 
 " mappings
 map <silent> <leader>/ <plug>NERDCommenterToggle<CR>
@@ -52,14 +60,15 @@ map <silent> b <plug>CamelCaseMotion_b
 
 " unite
 " remove trailing whitespace highlighting in unite window
-au BufEnter *     hi ExtraWhiteSpace ctermbg=darkred
-au FileType unite hi ExtraWhiteSpace ctermbg=none
+"au BufEnter *     hi ExtraWhiteSpace ctermbg=darkred
+"au FileType unite hi ExtraWhiteSpace ctermbg=none
 
 let g:unite_split_rule = 'botright'
 let g:unite_force_overwrite_statusline = 0
+let g:unite_winheight = 12
 
 map <silent> <leader>b :Unite buffer<CR>
-map <silent> <C-p> :Unite file<CR>
+map <silent> <leader>f :Unite file<CR>
 
 " open new empty tab and show file prompt
 map <silent> <leader>t :tabnew<CR>:Unite file<CR>
