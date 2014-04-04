@@ -17,9 +17,11 @@ NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'bronson/vim-trailing-whitespace'
 NeoBundle 'bkad/CamelCaseMotion'
 NeoBundle 'Yggdroot/indentLine'
+NeoBundle 'tpope/vim-abolish'
 
 " Syntax
-NeoBundle 'derekwyatt/vim-scala'
+"NeoBundle 'derekwyatt/vim-scala'
+NeoBundle 'rosstimson/scala-vim-support'
 
 " Colorschemes
 NeoBundle 'noahfrederick/vim-hemisu'
@@ -58,10 +60,12 @@ map <silent> b <plug>CamelCaseMotion_b
 "sunmap w
 "sunmap b
 
+map <silent> <leader>a <plug>Coerce
+
 " unite
 " remove trailing whitespace highlighting in unite window
-"au BufEnter *     hi ExtraWhiteSpace ctermbg=darkred
-"au FileType unite hi ExtraWhiteSpace ctermbg=none
+au BufEnter *     hi ExtraWhiteSpace ctermbg=217
+au FileType unite hi ExtraWhiteSpace ctermbg=none
 
 let g:unite_split_rule = 'botright'
 let g:unite_force_overwrite_statusline = 0
