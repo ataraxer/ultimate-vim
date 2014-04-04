@@ -19,10 +19,18 @@ NeoBundle 'bkad/CamelCaseMotion'
 NeoBundle 'Yggdroot/indentLine'
 
 " Syntax
-NeoBundle 'derekwyatt/vim-scala'
+"NeoBundle 'derekwyatt/vim-scala'
+NeoBundle 'rosstimson/scala-vim-support'
 
 " Colorschemes
 NeoBundle 'noahfrederick/vim-hemisu'
+
+" enable filetype specific indenting and plugins
+" required by NeoBundle
+filetype plugin indent on
+
+" ask to load bundles on vim start
+NeoBundleCheck
 
 " Settings
 " colorscheme
@@ -33,11 +41,12 @@ hi multiple_cursors_cursor cterm=none
 hi link multiple_cursors_visual Visual
 
 " TODO: find out why that's not working
-hi link scalaKeywordModifier Keyword
+hi link scalaKeywordModifier Constant
 hi link scalaNameDefinition  Keyword
 
 " indent lines with |
 "let g:indentLine_char = '|'
+let g:indentLine_faster = 1
 
 " mappings
 map <silent> <leader>/ <plug>NERDCommenterToggle<CR>
@@ -60,8 +69,8 @@ map <silent> b <plug>CamelCaseMotion_b
 
 " unite
 " remove trailing whitespace highlighting in unite window
-"au BufEnter *     hi ExtraWhiteSpace ctermbg=darkred
-"au FileType unite hi ExtraWhiteSpace ctermbg=none
+au BufEnter *     hi ExtraWhiteSpace ctermbg=darkred
+au FileType unite hi ExtraWhiteSpace ctermbg=none
 
 let g:unite_split_rule = 'botright'
 let g:unite_force_overwrite_statusline = 0
