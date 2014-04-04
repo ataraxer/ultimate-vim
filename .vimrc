@@ -3,7 +3,6 @@ if filereadable(expand('~/.vimrc.bundle'))
 endif
 
 syntax on
-filetype plugin indent on " enable filetype specific indenting and plugins
 
 set cursorline   " highlight current line
 set number       " show line numbers
@@ -84,3 +83,4 @@ map <silent> <leader>q :q<CR>
 map <silent> <leader>s :w<CR>
 " hide search highlighting with \h
 map <silent> <leader>h :nohl<CR>
+

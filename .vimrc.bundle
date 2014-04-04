@@ -26,6 +26,13 @@ NeoBundle 'rosstimson/scala-vim-support'
 " Colorschemes
 NeoBundle 'noahfrederick/vim-hemisu'
 
+" enable filetype specific indenting and plugins
+" required by NeoBundle
+filetype plugin indent on
+
+" ask to load bundles on vim start
+NeoBundleCheck
+
 " Settings
 " colorscheme
 color hemisu
@@ -35,11 +42,12 @@ hi multiple_cursors_cursor cterm=none
 hi link multiple_cursors_visual Visual
 
 " TODO: find out why that's not working
-hi link scalaKeywordModifier Keyword
+hi link scalaKeywordModifier Constant
 hi link scalaNameDefinition  Keyword
 
 " indent lines with |
 "let g:indentLine_char = '|'
+let g:indentLine_faster = 1
 
 " mappings
 map <silent> <leader>/ <plug>NERDCommenterToggle<CR>
