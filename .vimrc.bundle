@@ -95,3 +95,15 @@ nnoremap <Leader><Space> :Goyo 80<CR>
 let g:goyo_margin_top = 0
 let g:goyo_margin_bottom = 0
 "let g:goyo_linenr = 1
+
+function! s:goyo_before()
+  nnoremap <Leader><Space> :q<CR>
+endfunction
+
+function! s:goyo_after()
+  nnoremap <Leader><Space> :Goyo 80<CR>
+  syntax on
+  IndentLinesReset
+endfunction
+
+let g:goyo_callbacks = [function('s:goyo_before'), function('s:goyo_after')]
