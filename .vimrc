@@ -51,6 +51,7 @@ set background=light
 
 au BufRead,BufNewFile *.py set expandtab shiftwidth=4 softtabstop=4
 au BufRead *.json set noexpandtab shiftwidth=4 softtabstop=4
+au BufRead *.sbt  set syntax=scala
 
 if filereadable(expand('~/.vimrc.local'))
   source ~/.vimrc.local

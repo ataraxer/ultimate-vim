@@ -97,11 +97,19 @@ let g:goyo_margin_bottom = 0
 "let g:goyo_linenr = 1
 
 function! s:goyo_before()
+  " toggle Goyo
   nnoremap <Leader><Space> :q<CR>
+  " force exit vim
+  map <silent> <leader>q :q<CR>:q<CR>
+  silent !tmux set -g status off > /dev/null
 endfunction
 
 function! s:goyo_after()
+  " togle Goyo
   nnoremap <Leader><Space> :Goyo 80<CR>
+  " restore \q mapping
+  map <silent> <leader>q :q<CR>
+  silent !tmux set -g status on > /dev/null
   syntax on
   IndentLinesReset
 endfunction
