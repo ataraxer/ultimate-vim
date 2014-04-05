@@ -18,6 +18,7 @@ NeoBundle 'bronson/vim-trailing-whitespace'
 NeoBundle 'bkad/CamelCaseMotion'
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'tpope/vim-abolish'
+NeoBundle 'junegunn/goyo.vim'
 
 " Syntax
 "NeoBundle 'derekwyatt/vim-scala'
@@ -89,3 +90,8 @@ map <silent> <leader>t :tabnew<CR>:Unite file<CR>
 " remove trailing whitespaces on save
 au BufWritePost * :FixWhitespace
 
+" Goyo
+nnoremap <Leader><Space> :Goyo 80<CR>
+let g:goyo_margin_top = 0
+let g:goyo_margin_bottom = 0
+"let g:goyo_linenr = 1
