@@ -19,6 +19,7 @@ NeoBundle 'bkad/CamelCaseMotion'
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'tpope/vim-abolish'
 NeoBundle 'junegunn/goyo.vim'
+NeoBundle 'bling/vim-airline'
 
 " Syntax
 "NeoBundle 'derekwyatt/vim-scala'
@@ -45,6 +46,16 @@ hi link multiple_cursors_visual Visual
 " TODO: find out why that's not working
 hi link scalaKeywordModifier Constant
 hi link scalaNameDefinition  Keyword
+
+" airline
+let g:airline_detect_modified = 1
+let g:airline_theme = 'powerlineish'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#syntastic#enabled = 1
+let g:airline#extensions##enabled = 1
+"let g:airline#extensions#tabline#enabled = 1
+
 
 " indent lines with |
 "let g:indentLine_char = '|'
