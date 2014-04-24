@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-git clone --recursive git@github.com:ataraxer/ultimate-vim.git
+git clone --recursive https://github.com/ataraxer/ultimate-vim.git
 cd ultimate-vim
 
 dir=$(pwd)
