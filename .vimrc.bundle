@@ -24,6 +24,7 @@ NeoBundle 'bling/vim-airline'
 " Syntax
 "NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'rosstimson/scala-vim-support'
+NeoBundle 'kchmck/vim-coffee-script'
 
 " Colorschemes
 NeoBundle 'noahfrederick/vim-hemisu'
