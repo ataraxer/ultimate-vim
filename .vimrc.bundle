@@ -117,7 +117,7 @@ let g:goyo_margin_top = 0
 let g:goyo_margin_bottom = 0
 "let g:goyo_linenr = 1
 
-function! s:goyo_before()
+function! g:goyo_before()
   " toggle Goyo
   nnoremap <Leader><Space> :q<CR>
   " force exit vim
@@ -125,14 +125,15 @@ function! s:goyo_before()
   silent !tmux set -g status off > /dev/null
 endfunction
 
-function! s:goyo_after()
+function! g:goyo_after()
   " togle Goyo
   nnoremap <Leader><Space> :Goyo 80<CR>
   " restore \q mapping
   map <silent> <leader>q :q<CR>
   silent !tmux set -g status on > /dev/null
-  syntax on
+  "syntax on
   IndentLinesReset
+  AirlineRefresh
 endfunction
 
-let g:goyo_callbacks = [function('s:goyo_before'), function('s:goyo_after')]
+let g:goyo_callbacks = [function('g:goyo_before'), function('g:goyo_after')]
