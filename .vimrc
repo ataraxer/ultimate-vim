@@ -87,4 +87,6 @@ map <silent> <leader>q :q<CR>
 map <silent> <leader>s :w<CR>
 " hide search highlighting with \h
 map <silent> <leader>h :nohl<CR>
+" easy fold
+vmap <silent> <leader>f :fold<CR>
 
