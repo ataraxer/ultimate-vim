@@ -50,8 +50,14 @@ set term=screen-256color
 set background=light
 
 au BufRead,BufNewFile *.py set expandtab shiftwidth=4 softtabstop=4
-au BufRead *.json set noexpandtab shiftwidth=4 softtabstop=4
-au BufRead *.sbt  set syntax=scala
+au BufRead,BufNewFile *.json set noexpandtab shiftwidth=4 softtabstop=4
+au BufRead,BufNewFile *.c set noexpandtab shiftwidth=4 softtabstop=4
+au BufRead,BufNewFile *.cc set noexpandtab shiftwidth=4 softtabstop=4
+au BufRead,BufNewFile *.cpp set noexpandtab shiftwidth=4 softtabstop=4
+au BufRead,BufNewFile *.h set noexpandtab shiftwidth=4 softtabstop=4
+au BufRead,BufNewFile *.gitconfig set noexpandtab shiftwidth=4 softtabstop=4
+au BufRead,BufNewFile *.sbt set syntax=scala
+au BufRead,BufNewFile *.md set syntax=markdown wrap textwidth=80 formatoptions=cqt
 
 if filereadable(expand('~/.vimrc.local'))
   source ~/.vimrc.local
