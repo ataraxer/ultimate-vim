@@ -26,6 +26,8 @@ NeoBundle 'wting/rust.vim'
 "NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'rosstimson/scala-vim-support'
 NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'toyamarinyon/vim-swift'
+NeoBundle 'pangloss/vim-javascript'
 
 " Colorschemes
 NeoBundle 'noahfrederick/vim-hemisu'
