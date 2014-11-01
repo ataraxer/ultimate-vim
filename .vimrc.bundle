@@ -21,6 +21,10 @@ NeoBundle 'tpope/vim-abolish'
 NeoBundle 'junegunn/goyo.vim'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'wting/rust.vim'
+NeoBundle 'garbas/vim-snipmate'
+NeoBundle 'honza/vim-snippets'
+NeoBundle 'MarcWeber/vim-addon-mw-utils'
+NeoBundle 'tomtom/tlib_vim'
 
 " Syntax
 "NeoBundle 'derekwyatt/vim-scala'

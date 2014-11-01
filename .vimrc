@@ -58,6 +58,10 @@ au BufRead,BufNewFile *.h set noexpandtab shiftwidth=4 softtabstop=4
 au BufRead,BufNewFile *.gitconfig set noexpandtab shiftwidth=4 softtabstop=4
 au BufRead,BufNewFile *.sbt set syntax=scala
 au BufRead,BufNewFile *.md set syntax=markdown wrap textwidth=80 formatoptions=cqt
+au BufRead,BufNewFile *.conf set syntax=ruby
+au BufRead,BufNewFile *.snippets set noexpandtab shiftwidth=4 softtabstop=4
+
+au FileType sh set noexpandtab shiftwidth=4 softtabstop=4
 
 if filereadable(expand('~/.vimrc.local'))
   source ~/.vimrc.local
