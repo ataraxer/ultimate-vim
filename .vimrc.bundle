@@ -35,6 +35,12 @@ NeoBundle 'pangloss/vim-javascript'
 
 " Colorschemes
 NeoBundle 'noahfrederick/vim-hemisu'
+NeoBundle 'jonathanfilip/vim-lucius'
+NeoBundle 'jnurmine/Zenburn'
+NeoBundle 'nowk/genericdc'
+NeoBundle 'vim-scripts/strange'
+NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'vim-scripts/saturn.vim'
 
 " enable filetype specific indenting and plugins
 " required by NeoBundle
@@ -55,8 +61,9 @@ let g:airline#extensions#whitespace#enabled = 0
 
 
 " colorscheme
-color hemisu
-set background=light
+"color hemisu
+"set background=light
+color genericdc
 
 hi multiple_cursors_cursor cterm=none
 hi link multiple_cursors_visual Visual
@@ -78,6 +85,7 @@ let g:airline#extensions##enabled = 1
 " indent lines with |
 "let g:indentLine_char = '|'
 let g:indentLine_faster = 1
+let g:indentLine_color_term = 240
 
 " mappings
 map <silent> <leader>/ <plug>NERDCommenterToggle<CR>
