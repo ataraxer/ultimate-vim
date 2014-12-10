@@ -146,8 +146,9 @@ function! g:Goyo_after()
   nnoremap <Leader><Space> :Goyo 80<CR>
   " restore \q mapping
   map <silent> <leader>q :q<CR>
-  "syntax on
   "silent !tmux set -g status on > /dev/null
+  syntax off
+  syntax on
   IndentLinesReset
   AirlineRefresh
 endfunction
