@@ -25,6 +25,7 @@ NeoBundle 'garbas/vim-snipmate'
 NeoBundle 'honza/vim-snippets'
 NeoBundle 'MarcWeber/vim-addon-mw-utils'
 NeoBundle 'tomtom/tlib_vim'
+NeoBundle 'airblade/vim-gitgutter'
 
 " Syntax
 "NeoBundle 'derekwyatt/vim-scala'
@@ -154,3 +155,6 @@ function! g:Goyo_after()
 endfunction
 
 let g:goyo_callbacks = [function('g:Goyo_before'), function('g:Goyo_after')]
+
+let g:gitgutter_realtime = 0
+let g:gitgutter_eager = 0
