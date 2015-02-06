@@ -33,6 +33,8 @@ NeoBundle 'rosstimson/scala-vim-support'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'toyamarinyon/vim-swift'
 NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'gkz/vim-ls'
+NeoBundle 'ekalinin/Dockerfile.vim'
 
 " Colorschemes
 NeoBundle 'noahfrederick/vim-hemisu'
