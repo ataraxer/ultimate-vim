@@ -37,10 +37,10 @@ NeoBundle 'gkz/vim-ls'
 NeoBundle 'ekalinin/Dockerfile.vim'
 
 " Colorschemes
+NeoBundle 'ataraxer/vim-nightlight'
 NeoBundle 'noahfrederick/vim-hemisu'
 NeoBundle 'jonathanfilip/vim-lucius'
 NeoBundle 'jnurmine/Zenburn'
-NeoBundle 'nowk/genericdc'
 NeoBundle 'vim-scripts/strange'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'vim-scripts/saturn.vim'
@@ -66,7 +66,7 @@ let g:airline#extensions#whitespace#enabled = 0
 " colorscheme
 "color hemisu
 "set background=light
-color genericdc
+color nightlight
 
 hi multiple_cursors_cursor cterm=none
 hi link multiple_cursors_visual Visual
