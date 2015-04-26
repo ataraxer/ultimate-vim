@@ -47,8 +47,6 @@ set expandtab shiftwidth=2 softtabstop=2
 set t_Co=256
 set term=screen-256color
 
-set background=light
-
 au BufRead,BufNewFile *.py set expandtab shiftwidth=4 softtabstop=4
 au BufRead,BufNewFile *.json set noexpandtab shiftwidth=4 softtabstop=4
 au BufRead,BufNewFile *.c set noexpandtab shiftwidth=4 softtabstop=4
@@ -60,8 +58,10 @@ au BufRead,BufNewFile *.sbt set syntax=scala
 au BufRead,BufNewFile *.md set syntax=markdown wrap nolist
 au BufRead,BufNewFile *.conf set syntax=ruby
 au BufRead,BufNewFile *.snippets set noexpandtab shiftwidth=4 softtabstop=4
+au BufRead,BufNewFile *.hbs set syntax=html
 
 au FileType sh set noexpandtab shiftwidth=4 softtabstop=4
+au FileType java :SyntasticToggleMode
 
 if filereadable(expand('~/.vimrc.local'))
   source ~/.vimrc.local
@@ -100,27 +100,3 @@ map <silent> <leader>h :nohl<CR>
 " easy fold
 vmap <silent> <leader>f :fold<CR>
 
-" mapping to make movements operate on 1 screen line in wrap mode
-function! ScreenMovement(movement)
-  if &wrap
-    return "g" . a:movement
-  else
-    return a:movement
-  endif
-endfunction
-
-onoremap <silent> <expr> j ScreenMovement("j")
-onoremap <silent> <expr> k ScreenMovement("k")
-onoremap <silent> <expr> 0 ScreenMovement("0")
-onoremap <silent> <expr> ^ ScreenMovement("^")
-onoremap <silent> <expr> $ ScreenMovement("$")
-nnoremap <silent> <expr> j ScreenMovement("j")
-nnoremap <silent> <expr> k ScreenMovement("k")
-nnoremap <silent> <expr> 0 ScreenMovement("0")
-nnoremap <silent> <expr> ^ ScreenMovement("^")
-nnoremap <silent> <expr> $ ScreenMovement("$")
-
-if &wrap
-  nnoremap <silent> <expr> A "g$a"
-  nnoremap <silent> <expr> I "g^i"
-endif

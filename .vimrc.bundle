@@ -28,8 +28,8 @@ NeoBundle 'tomtom/tlib_vim'
 NeoBundle 'airblade/vim-gitgutter'
 
 " Syntax
-"NeoBundle 'derekwyatt/vim-scala'
-NeoBundle 'rosstimson/scala-vim-support'
+NeoBundle 'derekwyatt/vim-scala'
+"NeoBundle 'rosstimson/scala-vim-support'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'toyamarinyon/vim-swift'
 NeoBundle 'pangloss/vim-javascript'
@@ -44,9 +44,10 @@ NeoBundle 'jnurmine/Zenburn'
 NeoBundle 'vim-scripts/strange'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'vim-scripts/saturn.vim'
+NeoBundle 'chriskempson/base16-vim'
 
 " enable filetype specific indenting and plugins
-" required by NeoBundle
+
 filetype plugin indent on
 
 " ask to load bundles on vim start
@@ -56,17 +57,11 @@ NeoBundleCheck
 " airline
 let g:airline_powerline_fonts = 1
 let g:airline_detect_modified = 1
-"let g:airline_theme = 'wombat'
-"let g:airline_theme = 'bubblegum'
 let g:airline_theme = 'powerlineish'
-"let g:airline_theme = 'lucius'
 let g:airline#extensions#whitespace#enabled = 0
 
-
-" colorscheme
-"color hemisu
-"set background=light
 color nightlight
+
 
 hi multiple_cursors_cursor cterm=none
 hi link multiple_cursors_visual Visual
@@ -82,7 +77,6 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions##enabled = 1
-"let g:airline#extensions#tabline#enabled = 1
 
 
 " indent lines with |
@@ -115,6 +109,7 @@ map <silent> <leader>a <plug>Coerce
 " remove trailing whitespace highlighting in unite window
 au BufEnter *     hi ExtraWhiteSpace ctermbg=217
 au FileType unite hi ExtraWhiteSpace ctermbg=none
+au BufRead,BufNewFile *.sbt let g:syntastic_scala_checkers=['']
 
 let g:unite_split_rule = 'botright'
 let g:unite_force_overwrite_statusline = 0
