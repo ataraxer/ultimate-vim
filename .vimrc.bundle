@@ -28,8 +28,8 @@ NeoBundle 'tomtom/tlib_vim'
 NeoBundle 'airblade/vim-gitgutter'
 
 " Syntax
+NeoBundle 'ataraxer/vim-oceanic'
 NeoBundle 'derekwyatt/vim-scala'
-"NeoBundle 'rosstimson/scala-vim-support'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'toyamarinyon/vim-swift'
 NeoBundle 'pangloss/vim-javascript'
@@ -40,81 +40,69 @@ NeoBundle 'ekalinin/Dockerfile.vim'
 NeoBundle 'ataraxer/vim-nightlight'
 NeoBundle 'noahfrederick/vim-hemisu'
 NeoBundle 'jonathanfilip/vim-lucius'
-NeoBundle 'jnurmine/Zenburn'
 NeoBundle 'vim-scripts/strange'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'vim-scripts/saturn.vim'
 NeoBundle 'chriskempson/base16-vim'
 
 " enable filetype specific indenting and plugins
-
 filetype plugin indent on
 
 " ask to load bundles on vim start
 NeoBundleCheck
 
-" Settings
-" airline
-let g:airline_powerline_fonts = 1
-let g:airline_detect_modified = 1
-let g:airline_theme = 'powerlineish'
-let g:airline#extensions#whitespace#enabled = 0
+" ==== Settings ==== "
 
-color nightlight
+" syntax highlighting scheme
+color oceanic
 
-
+" multiple cursors
 hi multiple_cursors_cursor cterm=none
 hi link multiple_cursors_visual Visual
 
-" TODO: find out why that's not working
-hi link scalaKeywordModifier Constant
-hi link scalaNameDefinition  Keyword
-
 " airline
-let g:airline_detect_modified = 1
-let g:airline_theme = 'powerlineish'
-let g:airline_powerline_fonts = 1
+let g:airline#extensions##enabled = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#syntastic#enabled = 1
-let g:airline#extensions##enabled = 1
+let g:airline#extensions#whitespace#enabled = 0
+let g:airline_detect_modified = 1
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'powerlineish'
 
-
-" indent lines with |
-"let g:indentLine_char = '|'
+" indent line
 let g:indentLine_faster = 1
-let g:indentLine_color_term = 240
+let g:indentLine_color_term = 10
 
-" mappings
+" easy motion
+let g:EasyMotion_smartcase = 1
+let g:EasyMotion_keys = 'asdfjkl;weio'
+
+" unite
+let g:unite_split_rule = 'botright'
+let g:unite_force_overwrite_statusline = 0
+let g:unite_winheight = 12
+" remove trailing whitespace highlighting in unite window
+au FileType unite hi ExtraWhiteSpace ctermbg=none
+au BufRead,BufNewFile *.sbt let g:syntastic_scala_checkers=['']
+
+
+" ==== Mappings ==== "
+
 map <silent> <leader>/ <plug>NERDCommenterToggle<CR>
+
 
 " replace standart serach with easymotion
 map  / <plug>(easymotion-sn)
 omap / <plug>(easymotion-tn)
-"map  <Tab> <plug>(easymotion-next)
-"map  <S-Tab> <plug>(easymotion-prev)
 
 map <leader>w <plug>(easymotion-lineanywhere)
 
-let g:EasyMotion_smartcase = 1
-let g:EasyMotion_keys = 'asdfjkl;weio'
-
 map <silent> w <plug>CamelCaseMotion_w
 map <silent> b <plug>CamelCaseMotion_b
-"sunmap w
-"sunmap b
 
 map <silent> <leader>a <plug>Coerce
 
 " unite
-" remove trailing whitespace highlighting in unite window
-au BufEnter *     hi ExtraWhiteSpace ctermbg=217
-au FileType unite hi ExtraWhiteSpace ctermbg=none
-au BufRead,BufNewFile *.sbt let g:syntastic_scala_checkers=['']
-
-let g:unite_split_rule = 'botright'
-let g:unite_force_overwrite_statusline = 0
-let g:unite_winheight = 12
-
 map <silent> <leader>b :Unite buffer<CR>
 map <silent> <leader>f :Unite file<CR>
 
@@ -155,3 +143,5 @@ let g:goyo_callbacks = [function('g:Goyo_before'), function('g:Goyo_after')]
 
 let g:gitgutter_realtime = 0
 let g:gitgutter_eager = 0
+
+
