@@ -28,7 +28,6 @@ NeoBundle 'tomtom/tlib_vim'
 NeoBundle 'airblade/vim-gitgutter'
 
 " Syntax
-NeoBundle 'ataraxer/vim-oceanic'
 NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'toyamarinyon/vim-swift'
@@ -37,7 +36,7 @@ NeoBundle 'gkz/vim-ls'
 NeoBundle 'ekalinin/Dockerfile.vim'
 
 " Colorschemes
-NeoBundle 'ataraxer/vim-nightlight'
+NeoBundle 'ataraxer/vim-oceanic'
 NeoBundle 'noahfrederick/vim-hemisu'
 NeoBundle 'jonathanfilip/vim-lucius'
 NeoBundle 'vim-scripts/strange'
