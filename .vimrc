@@ -59,6 +59,7 @@ au BufRead,BufNewFile *.md set syntax=markdown wrap nolist
 au BufRead,BufNewFile *.conf set syntax=ruby
 au BufRead,BufNewFile *.snippets set noexpandtab shiftwidth=4 softtabstop=4
 au BufRead,BufNewFile *.hbs set syntax=html
+au BufRead,BufNewFile *.java set expandtab shiftwidth=4 softtabstop=4
 
 au FileType sh set noexpandtab shiftwidth=4 softtabstop=4
 au FileType java :SyntasticToggleMode
