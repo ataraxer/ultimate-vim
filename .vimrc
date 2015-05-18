@@ -106,4 +106,6 @@ map <silent> <leader>s :w<CR>
 map <silent> <leader>h :nohl<CR>
 " easy fold
 vmap <silent> <leader>f :fold<CR>
+" reload configuration
+map <silent> <leader>r :so ~/.vimrc.bundle<CR>
 
