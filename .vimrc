@@ -63,6 +63,9 @@ au BufRead,BufNewFile *.hbs set syntax=html
 au FileType sh set noexpandtab shiftwidth=4 softtabstop=4
 au FileType java :SyntasticToggleMode
 
+hi ExtraWhitespace ctermbg=1
+match ExtraWhitespace /\s\+$/
+
 if filereadable(expand('~/.vimrc.local'))
   source ~/.vimrc.local
 endif
