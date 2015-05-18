@@ -67,6 +67,9 @@ au FileType java :SyntasticToggleMode
 hi ExtraWhitespace ctermbg=1
 match ExtraWhitespace /\s\+$/
 
+" color of tab characters
+hi SpecialKey ctermfg=10
+
 if filereadable(expand('~/.vimrc.local'))
   source ~/.vimrc.local
 endif
