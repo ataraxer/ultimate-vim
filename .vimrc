@@ -51,7 +51,7 @@ au BufRead,BufNewFile *.py set expandtab shiftwidth=4 softtabstop=4
 au BufRead,BufNewFile *.json set noexpandtab shiftwidth=4 softtabstop=4
 au BufRead,BufNewFile *.c set noexpandtab shiftwidth=4 softtabstop=4
 au BufRead,BufNewFile *.cc set noexpandtab shiftwidth=4 softtabstop=4
-au BufRead,BufNewFile *.cpp set noexpandtab shiftwidth=4 softtabstop=4
+au BufRead,BufNewFile *.cpp set expandtab shiftwidth=4 softtabstop=4
 au BufRead,BufNewFile *.h set noexpandtab shiftwidth=4 softtabstop=4
 au BufRead,BufNewFile *.gitconfig set noexpandtab shiftwidth=4 softtabstop=4
 au BufRead,BufNewFile *.sbt set syntax=scala
@@ -98,10 +98,15 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 
 nmap q :call SynStack()<CR>
 
-" close buffer with \q
-map <silent> <leader>q :q<CR>
+" close buffer with \Q
+map <silent> <leader>Q :q<CR>
+map <silent> <space>Q :q<CR>
 " save file with \s
 map <silent> <leader>s :w<CR>
+map <silent> <space>s :w<CR>
+" save and close with \q
+map <silent> <leader>q :wq<CR>
+map <silent> <space>q :wq<CR>
 " hide search highlighting with \h
 map <silent> <leader>h :nohl<CR>
 " easy fold

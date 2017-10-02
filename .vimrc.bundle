@@ -19,7 +19,8 @@ NeoBundle 'bkad/CamelCaseMotion'
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'tpope/vim-abolish'
 NeoBundle 'junegunn/goyo.vim'
-NeoBundle 'bling/vim-airline'
+NeoBundle 'vim-airline/vim-airline'
+NeoBundle 'vim-airline/vim-airline-themes'
 NeoBundle 'wting/rust.vim'
 NeoBundle 'garbas/vim-snipmate'
 NeoBundle 'honza/vim-snippets'
@@ -28,7 +29,7 @@ NeoBundle 'tomtom/tlib_vim'
 NeoBundle 'airblade/vim-gitgutter'
 
 " Syntax
-NeoBundle 'derekwyatt/vim-scala'
+NeoBundle 'ataraxer/vim-scala'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'toyamarinyon/vim-swift'
 NeoBundle 'pangloss/vim-javascript'
@@ -83,6 +84,7 @@ let g:unite_winheight = 12
 " remove trailing whitespace highlighting in unite window
 au FileType unite hi ExtraWhiteSpace ctermbg=none
 au BufRead,BufNewFile *.sbt let g:syntastic_scala_checkers=['']
+au BufRead,BufNewFile *.scala let g:syntastic_scala_checkers=['']
 
 
 " ==== Mappings ==== "
@@ -113,7 +115,7 @@ map <silent> <leader>t :tabnew<CR>:Unite file<CR>
 au BufWritePost * :FixWhitespace
 
 " Goyo
-nnoremap <Leader><Space> :Goyo 80<CR>
+nnoremap <Leader><Space> :Goyo 120x100%<CR>
 let g:goyo_margin_top = 0
 let g:goyo_margin_bottom = 0
 "let g:goyo_linenr = 1
@@ -128,7 +130,7 @@ endfunction
 
 function! g:Goyo_after()
   " togle Goyo
-  nnoremap <Leader><Space> :Goyo 80<CR>
+  nnoremap <Leader><Space> :Goyo 120<CR>
   " restore \q mapping
   map <silent> <leader>q :q<CR>
   "silent !tmux set -g status on > /dev/null
