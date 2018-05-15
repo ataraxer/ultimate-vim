@@ -8,42 +8,36 @@ call neobundle#rc(expand('~/.vim/bundle'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Plugins
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'ervandew/supertab'
-NeoBundle 'scrooloose/syntastic'
 NeoBundle 'Lokaltog/vim-easymotion'
-NeoBundle 'terryma/vim-multiple-cursors'
-NeoBundle 'scrooloose/nerdcommenter'
-NeoBundle 'bronson/vim-trailing-whitespace'
-NeoBundle 'bkad/CamelCaseMotion'
+NeoBundle 'MarcWeber/vim-addon-mw-utils'
+NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Yggdroot/indentLine'
-NeoBundle 'tpope/vim-abolish'
-NeoBundle 'junegunn/goyo.vim'
-NeoBundle 'vim-airline/vim-airline'
-NeoBundle 'vim-airline/vim-airline-themes'
-NeoBundle 'wting/rust.vim'
+NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'bkad/CamelCaseMotion'
+NeoBundle 'bronson/vim-trailing-whitespace'
+NeoBundle 'ervandew/supertab'
 NeoBundle 'garbas/vim-snipmate'
 NeoBundle 'honza/vim-snippets'
-NeoBundle 'MarcWeber/vim-addon-mw-utils'
+NeoBundle 'junegunn/goyo.vim'
+NeoBundle 'scrooloose/nerdcommenter'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'tomtom/tlib_vim'
-NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'tpope/vim-abolish'
+NeoBundle 'vim-airline/vim-airline'
+NeoBundle 'vim-airline/vim-airline-themes'
 
 " Syntax
+NeoBundle 'wting/rust.vim'
 NeoBundle 'ataraxer/vim-scala'
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'toyamarinyon/vim-swift'
 NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'gkz/vim-ls'
 NeoBundle 'ekalinin/Dockerfile.vim'
+NeoBundle 'dag/vim-fish'
 
 " Colorschemes
 NeoBundle 'ataraxer/vim-oceanic'
 NeoBundle 'noahfrederick/vim-hemisu'
-NeoBundle 'jonathanfilip/vim-lucius'
-NeoBundle 'vim-scripts/strange'
-NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'vim-scripts/saturn.vim'
-NeoBundle 'chriskempson/base16-vim'
 
 " enable filetype specific indenting and plugins
 filetype plugin indent on
@@ -90,7 +84,6 @@ au BufRead,BufNewFile *.scala let g:syntastic_scala_checkers=['']
 " ==== Mappings ==== "
 
 map <silent> <leader>/ <plug>NERDCommenterToggle<CR>
-
 
 " replace standart serach with easymotion
 map  / <plug>(easymotion-sn)
@@ -144,5 +137,4 @@ let g:goyo_callbacks = [function('g:Goyo_before'), function('g:Goyo_after')]
 
 let g:gitgutter_realtime = 0
 let g:gitgutter_eager = 0
-
 

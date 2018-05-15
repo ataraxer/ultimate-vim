@@ -1,3 +1,6 @@
+scriptencoding utf-8
+set encoding=utf-8
+
 if filereadable(expand('~/.vimrc.bundle'))
   source ~/.vimrc.bundle
 endif
