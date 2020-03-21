@@ -20,12 +20,14 @@ NeoBundle 'garbas/vim-snipmate'
 NeoBundle 'honza/vim-snippets'
 NeoBundle 'junegunn/goyo.vim'
 NeoBundle 'scrooloose/nerdcommenter'
-NeoBundle 'scrooloose/syntastic'
+"NeoBundle 'scrooloose/syntastic'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'tomtom/tlib_vim'
 NeoBundle 'tpope/vim-abolish'
 NeoBundle 'vim-airline/vim-airline'
 NeoBundle 'vim-airline/vim-airline-themes'
+NeoBundle 'w0rp/ale'
+NeoBundle 'airblade/vim-rooter'
 
 " Syntax
 NeoBundle 'wting/rust.vim'
@@ -33,6 +35,9 @@ NeoBundle 'ataraxer/vim-scala'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'ekalinin/Dockerfile.vim'
 NeoBundle 'dag/vim-fish'
+NeoBundle 'godlygeek/tabular'
+NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'pangloss/vim-javascript'
 
 " Colorschemes
 NeoBundle 'ataraxer/vim-oceanic'
@@ -57,10 +62,10 @@ hi link multiple_cursors_visual Visual
 " airline
 let g:airline#extensions##enabled = 1
 let g:airline#extensions#branch#enabled = 1
-let g:airline#extensions#syntastic#enabled = 1
+"let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline_detect_modified = 1
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
 let g:airline_theme = 'powerlineish'
 
 " indent line
@@ -77,8 +82,8 @@ let g:unite_force_overwrite_statusline = 0
 let g:unite_winheight = 12
 " remove trailing whitespace highlighting in unite window
 au FileType unite hi ExtraWhiteSpace ctermbg=none
-au BufRead,BufNewFile *.sbt let g:syntastic_scala_checkers=['']
-au BufRead,BufNewFile *.scala let g:syntastic_scala_checkers=['']
+"au BufRead,BufNewFile *.sbt let g:syntastic_scala_checkers=['']
+"au BufRead,BufNewFile *.scala let g:syntastic_scala_checkers=['']
 
 
 " ==== Mappings ==== "
@@ -98,7 +103,12 @@ map <silent> <leader>a <plug>Coerce
 
 " unite
 map <silent> <leader>b :Unite buffer<CR>
-map <silent> <leader>f :Unite file<CR>
+"map <silent> <leader>f :Unite file_rec -start-insert<CR>
+map <silent> <leader>f :Unite file -start-insert<CR>
+
+" markdown
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_conceal = 0
 
 " open new empty tab and show file prompt
 map <silent> <leader>t :tabnew<CR>:Unite file<CR>
@@ -108,7 +118,7 @@ map <silent> <leader>t :tabnew<CR>:Unite file<CR>
 au BufWritePost * :FixWhitespace
 
 " Goyo
-nnoremap <Leader><Space> :Goyo 120x100%<CR>
+nnoremap <Leader><Space> :Goyo 80x100%<CR>
 let g:goyo_margin_top = 0
 let g:goyo_margin_bottom = 0
 "let g:goyo_linenr = 1
@@ -123,7 +133,7 @@ endfunction
 
 function! g:Goyo_after()
   " togle Goyo
-  nnoremap <Leader><Space> :Goyo 120<CR>
+  nnoremap <Leader><Space> :Goyo 80<CR>
   " restore \q mapping
   map <silent> <leader>q :q<CR>
   "silent !tmux set -g status on > /dev/null
@@ -138,3 +148,9 @@ let g:goyo_callbacks = [function('g:Goyo_before'), function('g:Goyo_after')]
 let g:gitgutter_realtime = 0
 let g:gitgutter_eager = 0
 
+let g:rooter_patterns = ['.git/']
+let g:rooter_silent_chdir = 1
+let g:rooter_manual_only = 1
+
+let g:ale_linters = { 'javascript': ['flow'] }
+let g:ale_java_javac_classpath = join(readfile('/Users/ataraxer/otravo/skipper/.classpath'), "\n")
